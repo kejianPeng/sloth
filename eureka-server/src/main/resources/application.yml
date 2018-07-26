@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: eureka-server
+
+# 端口定义要在 defaultZone 之前
+server:
+  port: 8761
+    
+#Spring eureka配置 
+#通过eureka.client.registerWithEureka:false和fetchRegistry:false来表明自己是一个eureka server
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+#Logging 配置
+logging:
+  file: /data/logs/sloth/${spring.application.name}/${spring.application.name}.log
+  level:
+    com.fd.sloth.eureka: INFO
