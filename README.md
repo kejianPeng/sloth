@@ -16,12 +16,20 @@
 6. -- Docker: Rancher  
 7. -- 文档Api: Swagger
 
-### 微服务模块
+### 模块
 
 #### 1. eureka-server
 eureka 服务端
 port: 8761
 
 #### 2. nt-sayhi
-nt-sayhi 微服务客户端测试代码
-port: 20001
+nt-sayhi eureka 微服务客户端测试代码
+port: 20001 / 20002
+
+#### 3. nt-ribbon-rest
+服务消费者 rest+ribbon 方式
+port: 19000
+
+#### 4. nt-feign
+服务消费者 feign 方式
+port: 19001

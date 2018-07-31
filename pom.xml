@@ -60,5 +60,7 @@
 	<modules>
 		<module>eureka-server</module>
 		<module>nt-sayhi</module>
+		<module>nt-ribbon-rest</module>
+		<module>nt-feign</module>
 	</modules>
 </project>

@@ -1,17 +1,19 @@
-package com.fd.sloth.sayhi;
+package com.fd.sloth.feign;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * @author FD.PENG
- * @date : 2018-07-26
+ * @date : 2018-07-31
  */
 @SpringBootApplication
-public class SayHiApplication {
+@EnableFeignClients
+public class FeignApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SayHiApplication.class, args);
+		SpringApplication.run(FeignApplication.class, args);
 	}
 
 }

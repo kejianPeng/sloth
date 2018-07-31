@@ -1,12 +1,8 @@
 spring:
   application:
-    name: nt-sayhi
+    name: nt-ribbon-rest
   profiles:
     active: default
-    
-server:
-  context-path: /
-  port: 20001
       
 #Spring eureka配置
 eureka:
@@ -21,4 +17,8 @@ eureka:
 logging:
   file: /data/logs/sloth/${spring.application.name}/${spring.application.name}.log
   level:
-    com.fd.sloth.sayhi: INFO
+    com.fd.sloth.ribbon: INFO
+
+server:
+  context-path: /
+  port: 19000
