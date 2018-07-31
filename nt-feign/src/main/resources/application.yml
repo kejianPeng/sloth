@@ -12,6 +12,11 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+      
+# feign 自带断路器，需要显示打开
+feign:
+  hystrix:
+    enabled: true
 
 #Logging 配置
 logging:
