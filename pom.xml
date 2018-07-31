@@ -62,5 +62,6 @@
 		<module>nt-ribbon-rest</module>
 		<module>nt-feign</module>
     <module>nt-zuul</module>
+    <module>nt-config-server</module>
   </modules>
 </project>

@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: nt-zuul
+  profiles:
+    active: default
+      
+#Spring eureka配置
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+      
+zuul:
+  routes:
+    nt-ribbon-rest:
+      path: /nt-ribbon-rest/**
+      serviceId: nt-ribbon-rest
+    nt-feign:
+      path: /nt-feign/**
+      serviceId: nt-feign
+
+#Logging 配置
+logging:
+  file: /data/logs/sloth/${spring.application.name}/${spring.application.name}.log
+  level:
+    com.fd.sloth.zuul: INFO
+
+server:
+  context-path: /
+  port: 19003
