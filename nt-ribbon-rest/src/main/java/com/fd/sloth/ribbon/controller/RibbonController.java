@@ -5,20 +5,28 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+
 /**
- * @author FD.PENG 
+ * @author FD.PENG
  * @date : 2018-07-30
  */
 @RestController
 public class RibbonController {
-	
+
 	@Autowired
 	private RestTemplate restTemplate;
-	
+
+	public static final String NT_SAYHI_URL = "http://NT-SAYHI/hi";
+
+	@HystrixCommand(fallbackMethod = "ribbonRestError")
 	@GetMapping("/ribbonHi")
 	public String testRibbonRest() {
-		String url = "http://NT-SAYHI/hi";
-		return restTemplate.getForObject(url, String.class);
+		return restTemplate.getForObject(NT_SAYHI_URL, String.class);
+	}
+
+	public String ribbonRestError() {
+		return "nt-ribbon-rest error.";
 	}
 
 }
