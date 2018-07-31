@@ -26,4 +26,4 @@ logging:
 
 server:
   context-path: /
-  port: 19001
+  port: 19002

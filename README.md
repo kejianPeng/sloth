@@ -18,18 +18,17 @@
 
 ### 模块
 
-#### 1. eureka-server
+#### 1. eureka-server ( 8761 )
 eureka 服务端
-port: 8761
 
-#### 2. nt-sayhi
+#### 2. nt-sayhi ( 20001 / 20002 )
 nt-sayhi eureka 微服务客户端测试代码
-port: 20001 / 20002
 
-#### 3. nt-ribbon-rest
+#### 3. nt-ribbon-rest ( 19001 )
 服务消费者 rest+ribbon 方式
-port: 19000
 
-#### 4. nt-feign
+#### 4. nt-feign ( 19002 )
 服务消费者 feign 方式
-port: 19001
+
+#### 5. nt-zuul ( 19003 )
+路由转发和过滤器 zuul
