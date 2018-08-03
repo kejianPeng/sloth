@@ -22,4 +22,7 @@ http请求地址和资源文件映射如下:
 
 #### Tips
 
-1. 
+1. 添加云配置中心客户端的时候，如果是 github 或者码云，直接使用 https://github.com/kejianPeng/springcloud-repo 即可，如果是公司自己搭建的 gitlab, 则需要加上 .git 后缀，如：http://172.16.0.10/company/nt-config-repo.git
+2. spring.cloud.config.server.git.searchPaths: 定义了配置文件搜索的位置，可以配置多个，多个之间用逗号分隔。
+3. spring cloud 2.0 之后，客户端需要手动配置 management.endpoints.web.exposure.include=refresh,health,info 才可以调用 /refresh 接口
+4. 访问链接举例： http://localhost:19004/nt-sayhi/prod/master

@@ -32,3 +32,6 @@ nt-sayhi eureka 微服务客户端测试代码
 
 #### 5. nt-zuul ( 19003 )
 路由转发和过滤器 zuul
+
+#### 6. nt-config-server ( 19004 )
+云配置中心服务端

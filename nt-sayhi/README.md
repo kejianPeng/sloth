@@ -12,4 +12,3 @@ nt-sayhi 项目, 微服务客户端测试代码
 ```
 Note that the preceding example shows a normal Spring Boot application. By having spring-cloud-starter-netflix-eureka-client on the classpath, your application automatically registers with the Eureka Server. Configuration is required to locate the Eureka server.
 ```
-

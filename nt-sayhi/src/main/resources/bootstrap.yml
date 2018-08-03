@@ -1,21 +1,44 @@
+# 访问路径 /{application}/{profile}[/{label}], 相对应设置如下
 spring:
   application:
     name: nt-sayhi
   profiles:
     active: default
-    
+  cloud:
+    config:
+      uri: http://localhost:19004/
+      profile: prod
+      label: master
+  #rabbitmq:
+   # host: 127.0.0.1
+   # port: 5672
+   # username: guest
+   # password: guest
+
 server:
   context-path: /
   port: 20001
-      
+    
 #Spring eureka配置
 eureka:
   instance:
     prefer-ip-address: true
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
   client:
+    # healthcheck:  
+     # enabled: false
+    # heartbeat-executor-thread-pool-size: 5
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health, info
+
+test:
+  name: local test
 
 #Logging 配置
 logging:
