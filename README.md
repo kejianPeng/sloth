@@ -5,6 +5,7 @@
 ### 参考文档
 
 1. [spring cloud 官方文档](http://cloud.spring.io/spring-cloud-static/Finchley.RELEASE/single/spring-cloud.html)
+2. [Spring Boot 2.0官方文档之 Actuator](https://blog.csdn.net/alinyua/article/details/80009435)
 
 ### 分布式云项目，使用到的技术
 
