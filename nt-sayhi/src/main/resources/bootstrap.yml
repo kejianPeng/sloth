@@ -9,11 +9,15 @@ spring:
       uri: http://localhost:19004/
       profile: prod
       label: master
+    #bus:
+      #enabled: true
+      #trace:
+        #enabled: true
   #rabbitmq:
-   # host: 127.0.0.1
-   # port: 5672
-   # username: guest
-   # password: guest
+    #host: 127.0.0.1
+    #port: 5672
+    #username: admin
+    #password: admin
 
 server:
   context-path: /
@@ -35,7 +39,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: refresh, health, info
+        include: refresh, health, info, bus-refresh
 
 test:
   name: local test
