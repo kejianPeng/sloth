@@ -26,3 +26,4 @@ http请求地址和资源文件映射如下:
 2. spring.cloud.config.server.git.searchPaths: 定义了配置文件搜索的位置，可以配置多个，多个之间用逗号分隔。
 3. spring cloud 2.0 之后，客户端需要手动配置 management.endpoints.web.exposure.include=refresh,health,info 才可以调用 /refresh 接口
 4. 访问链接举例： http://localhost:19004/nt-sayhi/prod/master
+5. 添加 bus 总线
