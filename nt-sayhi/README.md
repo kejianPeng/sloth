@@ -16,6 +16,15 @@ Note that the preceding example shows a normal Spring Boot application. By havin
 执行 http://localhost:20001/hi ==> Hi, cloud test repo - prod, port = 20001
 更新 git nt-sayhi-prod.yml 文件内容： name: cloud test repo - prod(2)
 执行 post 请求： http://localhost:20001/actuator/refresh ==> ["config.client.version","test.name"]
+eg: windows: curl -X POST http://localhost:20001/actuator/refresh 或者 POSTMAN 执行
 执行 http://localhost:20001/hi ==> Hi, cloud test repo - prod(2), port = 20001
 
-4. 
+4. 利用 bus 总线通知
+执行 http://localhost:20001/hi ==> Hi, cloud test repo - prod, port = 20001
+   http://localhost:20002/hi ==> Hi, cloud test repo - prod, port = 20002
+更新 git nt-sayhi-prod.yml 文件内容： name: cloud test repo - prod - update
+执行 post 请求： http://localhost:20001/actuator/bus-refresh
+eg: windows: curl -X POST http://localhost:20001/actuator/bus-refresh 或者 POSTMAN 执行
+执行 http://localhost:20001/hi ==> Hi, cloud test repo - prod - udpate, port = 20001
+   http://localhost:20002/hi ==> Hi, cloud test repo - prod - udpate, port = 20002
+会同时更新，上面 3 需要每个微服务都调用方法才能更新
