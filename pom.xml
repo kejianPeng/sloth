@@ -64,5 +64,6 @@
 		<module>nt-feign</module>
 		<module>nt-zuul</module>
 		<module>nt-config-server</module>
+		<module>nt-bus-test</module>
 	</modules>
 </project>

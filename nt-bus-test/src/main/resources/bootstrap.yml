@@ -1,0 +1,49 @@
+spring:
+  application:
+    name: nt-bus-test
+  profiles:
+    active: default
+  cloud:
+    config:
+      uri: http://localhost:19004/
+      profile: prod
+      label: master
+    bus:
+      enabled: true
+      trace:
+        enabled: true # 开启消息跟踪
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: admin
+    password: admin
+
+server:
+  context-path: /
+  port: 20003
+    
+#Spring eureka配置
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+management:
+  security:
+    enabled: false # 刷新时，关闭安全验证
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health, info, bus-refresh
+
+test:
+  name: local bus test
+
+#Logging 配置
+logging:
+  file: /data/logs/sloth/${spring.application.name}/${spring.application.name}.log
+  level:
+    com.fd.sloth.bus: INFO
