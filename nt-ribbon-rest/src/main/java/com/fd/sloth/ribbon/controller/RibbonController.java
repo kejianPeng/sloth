@@ -18,6 +18,13 @@ public class RibbonController {
 	private RestTemplate restTemplate;
 
 	public static final String NT_SAYHI_URL = "http://NT-SAYHI/hi";
+	
+	public static final String NT_SAYHI_REQ_URL = "http://NT-SAYHI/acceptReq";
+	
+	@GetMapping("/req")
+	public String testRibbionReq() {
+		return restTemplate.getForObject(NT_SAYHI_REQ_URL, String.class);
+	}
 
 	@HystrixCommand(fallbackMethod = "ribbonRestError")
 	@GetMapping("/ribbonHi")
@@ -28,5 +35,7 @@ public class RibbonController {
 	public String ribbonRestError() {
 		return "nt-ribbon-rest error.";
 	}
+	
+	
 
 }

@@ -38,6 +38,7 @@ C:\Users\thinkpad>curl -X POST http://localhost:19004/actuator/bus-refresh
 ```
 
 config server:
+
 ```
 2018-08-09 14:47:43.640  WARN 1944 --- [io-19004-exec-2] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1533797263640, current=UP, previous=DOWN]
 2018-08-09 14:47:43.640  INFO 1944 --- [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_NT-CONFIG-SERVER/192.168.18.186:19004: registering service...

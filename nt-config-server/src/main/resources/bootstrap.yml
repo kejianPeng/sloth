@@ -2,16 +2,17 @@ spring:
   application:
     name: nt-config-server
   profiles:
-    active: prod
+    active: default
   cloud:
     config:
       label: master
       server:
         git:
           uri: https://github.com/kejianPeng/springcloud-repo
-          searchPaths: test-repo
+          searchPaths: test-repo, test-config
           username: 
           password: 
+          force-pull: true
   rabbitmq:
     host: 127.0.0.1
     port: 5672

@@ -8,7 +8,7 @@
 2. [Spring Boot 2.0官方文档之 Actuator](https://blog.csdn.net/alinyua/article/details/80009435)
 
 ### 我的笔记
-1. [rabbitMQ windows 上的安装使用](http://note.youdao.com/noteshare?id=0b6edbde0c742173518c3a1d7ea789d9&sub=927FD980DEB0497ABF59DFA5008DE4DE)：
+1. [rabbitMQ windows 上的安装使用](http://note.youdao.com/noteshare?id=0b6edbde0c742173518c3a1d7ea789d9&sub=927FD980DEB0497ABF59DFA5008DE4DE)
 
 ### 分布式云项目，使用到的技术
 
