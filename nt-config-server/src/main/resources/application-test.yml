@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: nt-config-server-test
+  profiles:
+    active: test
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          uri: http://172.16.0.10/Kiseki/nt-kiseki-config-repo.git
+          searchPaths: test-config, test-repo
+          username: kiseki_config
+          password: nt$config1!
+          force-pull: true
+      
+#Spring eureka配置
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+#Logging 配置
+logging:
+  file: /data/logs/sloth/${spring.application.name}/${spring.application.name}.log
+  level:
+    com.fd.sloth.config: INFO
+
+server:
+  context-path: /
+  port: 19004

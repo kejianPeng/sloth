@@ -1,0 +1,13 @@
+# 小库 DB
+spring:
+  datasource:
+    db_sct_vip:
+      url: jdbc:mysql://172.16.0.25:3306/db_sct_vip?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false&useSSL=false
+      username: zhuoren
+      password: zhuoren3553!
+      driver-class-name: com.mysql.jdbc.Driver
+      test-while-idle: true
+      test-on-borrow: false
+      validation-query: SELECT 1
+      time-between-eviction-runs-millis: 300000
+      min-evictable-idle-time-millis: 1800000
